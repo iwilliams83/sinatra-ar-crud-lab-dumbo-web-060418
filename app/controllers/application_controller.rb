@@ -31,9 +31,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    puts "my params are #{params}"
-    @post = Post.new(name: params[:name], content: params[:content])
-    @post.save
+    #puts "my params are #{params}"
+    @post = Post.create(name: params[:name], content: params[:content])
+    #@post.save
     erb :index
   end
 end
